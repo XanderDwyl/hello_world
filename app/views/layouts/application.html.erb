@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>HelloWorld</title>
+    <%= display_meta_tags title: "#{@title || ''}", site: "CebuTalks", charset: "UTF-8", viewport: "width=device-width, initial-scale=1", reverse: true, og: { title:'CebuTalks', type: 'website', url: 'http://cebutalks.com/', image: 'http://cebutalks.com/assets/ogp.png', site_name: 'Cebu Talks', description: 'We not only leave in cebu but we also share and talk about cebu. Cebutalks.com are you\'re adventure partner\'s here in Cebu.', locale: 'en_US' } , twitter:{ card: "summary_large_image", site:"@cebutalks", creator:"@cebutalks", title:"We not only leave in cebu but we also share and talk about cebu. Cebutalks.com are you\'re adventure partner\'s here in Cebu.", image:"http://cebutalks.com/assets/ogp.png"} %>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +11,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
   </body>
 </html>
